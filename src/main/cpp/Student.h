@@ -1,10 +1,35 @@
-#ifndef STUDENT_H
-#define STUDENT_H
+//
+// Created by JavaMan on 2021/11/3.
+//
+
+#ifndef QTMIS_STUDENT_H
+#define QTMIS_STUDENT_H
 
 #include <QString>
 
+
 class Student {
+
+private:
+    QString id;
+
+    QString name;
+
+    QString sex;
+
+    QString age;
+
+    QString chineseScore;
+
+    QString mathScore;
+
+    QString englishScore;
+
 public:
+    QString getId() const;
+
+    void setId(const QString &value);
+
     QString getName() const;
 
     void setName(const QString &value);
@@ -17,31 +42,18 @@ public:
 
     void setAge(const QString &value);
 
-    QString getChinese_score() const;
+    QString getChineseScore() const;
 
-    void setChinese_score(const QString &value);
+    void setChineseScore(const QString &value);
 
-    QString getMath_score() const;
+    QString getMathScore() const;
 
-    void setMath_score(const QString &value);
+    void setMathScore(const QString &value);
 
-    QString getEnglish_score() const;
+    QString getEnglishScore() const;
 
-    void setEnglish_score(const QString &value);
-
-    QString getID() const;
-
-    void setID(const QString &value);
-
-private:
-    QString ID;
-    QString name;
-    QString sex;
-    QString age;
-    QString chinese_score;
-    QString math_score;
-    QString english_score;
+    void setEnglishScore(const QString &value);
 };
 
 
-#endif // STUDENT_H
+#endif //QTMIS_STUDENT_H

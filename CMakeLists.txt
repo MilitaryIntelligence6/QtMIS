@@ -37,27 +37,29 @@ if (ANDROID)
     add_library(QtMIS SHARED
             main.cpp
 
-            src/main/cpp/EditStuMessBox.h
-            src/main/cpp/EditStuMessBox.cpp
             src/main/cpp/MainWidget.h
             src/main/cpp/MainWidget.cpp
-            src/main/cpp/Student.h
+            src/main/cpp/Constant.h
+
             src/main/cpp/Student.cpp
-            src/main/cpp/Tool.h
-            #            shit 要用那个在下面
+            src/main/cpp/Student.h
+            src/main/cpp/AddStudentInfoBox.cpp
+            src/main/cpp/AddStudentInfoBox.h
+            # shit 要用那个在下面
             ${TS_FILES}
             )
 else ()
     add_executable(QtMIS
             main.cpp
 
-            src/main/cpp/EditStuMessBox.h
-            src/main/cpp/EditStuMessBox.cpp
             src/main/cpp/MainWidget.h
             src/main/cpp/MainWidget.cpp
-            src/main/cpp/Student.h
+            src/main/cpp/Constant.h
+
             src/main/cpp/Student.cpp
-            src/main/cpp/Tool.h
+            src/main/cpp/Student.h
+            src/main/cpp/AddStudentInfoBox.cpp
+            src/main/cpp/AddStudentInfoBox.h
 
             ${TS_FILES}
             )

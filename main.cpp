@@ -2,15 +2,10 @@
 #include <QApplication>
 #include "MainWidget.h"
 
-int main(int argc, char *argv[])
-{
-    QApplication app(argc, argv);
-//    MainWindow w;
-//    w.show();
-//    MainWidget mainWidget;
-//    mainWidget.show();
-    auto *mainWidget = new MainWidget();
-    mainWidget->show();
 
-    return app.exec();
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
+    std::unique_ptr<MainWidget> mainWidget(new MainWidget());
+    mainWidget->show();
+    return QApplication::exec();
 }

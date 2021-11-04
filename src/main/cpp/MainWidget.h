@@ -9,11 +9,15 @@
 #include <QGroupBox>
 #include <QPushButton>
 #include <QLineEdit>
-#include "EditStuMessBox.h"
+#include "AddStudentInfoBox.h"
 #include <QFile>
 #include <QDataStream>
 #include "Student.h"
-#include "Tool.h"
+#include "Constant.h"
+
+//namespace Controller {
+//    class MainWidget;
+//}
 
 //自定义主窗口
 class MainWidget : public QWidget {
@@ -64,7 +68,7 @@ private:
     QPushButton *SaveBtn;
     QPushButton *ExitBtn;
     //弹出的添加学生信息窗口
-    EditStuMessBox *messBox;
+    AddStudentInfoBox *messBox;
 };
 
 #endif // MAINWIDGET_H

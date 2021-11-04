@@ -1,5 +1,6 @@
 #include "MainWidget.h"
 #include<QDebug>
+#include <QMessageBox>
 
 MainWidget::MainWidget() {
     /**
@@ -81,10 +82,10 @@ QGroupBox *MainWidget::createMenu() {
 
 //当点击添加按钮时，弹出添加学生信息的子窗口
 void MainWidget::AddStuBox() {
-    messBox = new EditStuMessBox;
+    messBox = new AddStudentInfoBox();
     //当添加学生信息窗口关闭时，更新表格，同时清空列表中显示的学生信息
-    QObject::connect(messBox, &EditStuMessBox::closeBox, this, &MainWidget::flushTable);
-    QObject::connect(messBox, &EditStuMessBox::closeBox, ListWidget, &QListWidget::clear);
+    QObject::connect(messBox, &AddStudentInfoBox::onBoxClosed, this, &MainWidget::flushTable);
+    QObject::connect(messBox, &AddStudentInfoBox::onBoxClosed, ListWidget, &QListWidget::clear);
     messBox->exec();
 }
 
@@ -136,9 +137,10 @@ void MainWidget::flushListWidget(int row) {
     }
 }
 
-/* 删除学生信息
+/**
+ * 删除学生信息
  * 思路：将除目标学生外，其它学生的信息拷贝到一个临时文件中，然后删除原来的文件，并将临时文件的文件名改为和原文件相同的名称。
-*/
+ */
 void MainWidget::delStuFun() {
     QList<QTableWidgetItem *> items = TableWidget->selectedItems();
     //判断用户是否在表格中选中了某个学生信息，只有选中之后，才能执行删除操作
